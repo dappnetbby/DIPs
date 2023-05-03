@@ -4,7 +4,7 @@ module.exports = {
   },
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
-    title: 'Synthetix SIPs & SCCPs',
+    title: 'Dappnet DIPs',
   },
   plugins: [
     'gatsby-plugin-typescript',

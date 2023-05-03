@@ -22,13 +22,9 @@ const StatusTable: React.FC<Props> = ({ rows }) => {
         {rows.map((row) => (
           <tr key={row.id}>
             <td className="sipnum">
-              {row.frontmatter.sip ? (
-                <a href={`/sips/sip-${row.frontmatter.sip}`}>
-                  {row.frontmatter.sip}
-                </a>
-              ) : (
-                <a href={`/sccp/sccp-${row.frontmatter.sccp}`}>
-                  {row.frontmatter.sccp}
+              {row.frontmatter.dip && (
+                <a href={`/dips/dip-${row.frontmatter.dip}`}>
+                  {row.frontmatter.dip}
                 </a>
               )}
             </td>

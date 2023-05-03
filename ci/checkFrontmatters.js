@@ -16,7 +16,7 @@ const commonValidationSchema = Yup.object().shape({
   status: Yup.string().oneOf(statuses),
   author: Yup.string().required(),
   network: Yup.string()
-    .oneOf(['Ethereum', 'Optimism', 'Ethereum & Optimism'])
+    .oneOf(['Ethereum', 'Optimism', 'Ethereum & Optimism', 'n/a'])
     .required(),
   implementor: Yup.string().nullable(),
   release: Yup.string().nullable(),
@@ -26,20 +26,11 @@ const commonValidationSchema = Yup.object().shape({
   'discussions-to': Yup.string().nullable(),
 })
 
-const sipValidationSchema = commonValidationSchema
+const dipValidationSchema = commonValidationSchema
   .concat(
     Yup.object().shape({
-      sip: Yup.number().required(),
+      dip: Yup.number().required(),
       network: Yup.string().required(),
-    }),
-  )
-  .noUnknown()
-  .strict()
-
-const sccpValidationSchema = commonValidationSchema
-  .concat(
-    Yup.object().shape({
-      sccp: Yup.number().required(),
     }),
   )
   .noUnknown()
@@ -47,25 +38,15 @@ const sccpValidationSchema = commonValidationSchema
 
 ;(async () => {
   try {
-    const sips = await g('./content/sips/*.md')
-    const sccp = await g('./content/sccp/*.md')
+    const dips = await g('./content/dips/*.md')
 
-    // SIP
+    // DIP
     await Promise.all(
-      sips.map(async (file) => {
+      dips.map(async (file) => {
         const content = await fs.readFile(file, 'utf-8')
         const { attributes } = fm(content)
-        const castValues = sipValidationSchema.cast({ file, ...attributes })
-        return await sipValidationSchema.validate(castValues)
-      }),
-    )
-    // SCCP
-    await Promise.all(
-      sccp.map(async (file) => {
-        const content = await fs.readFile(file, 'utf-8')
-        const { attributes } = fm(content)
-        const castValues = sccpValidationSchema.cast({ file, ...attributes })
-        return await sccpValidationSchema.validate(castValues)
+        const castValues = dipValidationSchema.cast({ file, ...attributes })
+        return await dipValidationSchema.validate(castValues)
       }),
     )
   } catch (error) {

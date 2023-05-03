@@ -27,7 +27,7 @@ const Main: React.FC = ({ children }) => {
       <header className="site-header" role="banner">
         <div className="wrapper">
           <a className="site-title" rel="author" href="/">
-            SIPs
+            DIPs
           </a>
           <nav className="site-nav">
             <input type="checkbox" id="nav-trigger" className="nav-trigger" />
@@ -40,11 +40,8 @@ const Main: React.FC = ({ children }) => {
             </label>
 
             <div className="trigger">
-              <a className="page-link" href="/all-sip">
-                All SIPs
-              </a>
-              <a className="page-link" href="/all-sccp">
-                All SCCPs
+              <a className="page-link" href="/all-dip">
+                All DIPs
               </a>
             </div>
           </nav>
@@ -57,27 +54,27 @@ const Main: React.FC = ({ children }) => {
 
       <footer className="site-footer h-card">
         <div className="wrapper">
-          <h2 className="footer-heading">SIPs</h2>
+          <h2 className="footer-heading">DIPs</h2>
 
           <div className="footer-col-wrapper">
             <div className="footer-col footer-col-1">
               <ul className="contact-list">
-                <li className="p-name">SIPs</li>
+                <li className="p-name">DIPs</li>
               </ul>
             </div>
 
             <div className="footer-col footer-col-2">
               <ul className="social-media-list">
                 <li>
-                  <a href="https://github.com/Synthetixio/SIPs">
+                  <a href="https://github.com/dappnetbby/DIPs">
                     <GithubIcon className="svg-icon" />
-                    <span className="username">Synthetixio/SIPs</span>
+                    <span className="username">dappnetbby/DIPs</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/synthetix_io">
+                  <a href="https://twitter.com/dappnetbby">
                     <TwitterIcon className="svg-icon" />
-                    <span className="username">synthetix_io</span>
+                    <span className="username">dappnetbby</span>
                   </a>
                 </li>
               </ul>
@@ -85,9 +82,7 @@ const Main: React.FC = ({ children }) => {
 
             <div className="footer-col footer-col-3">
               <p>
-                Synthetix Improvement Proposals (SIPs) describe standards for
-                the Synthetix platform, including core protocol specifications,
-                client APIs, and contract standards.
+                Dappnet Improvement Proposals (DIPs) describe standards for the Dappnet platform, including the core browser client, protocols and other proposals.
               </p>
             </div>
           </div>
